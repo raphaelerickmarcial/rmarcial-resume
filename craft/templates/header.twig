@@ -8,7 +8,33 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Resume - Start Bootstrap Theme</title>
+    {# SEO META TAGS START HERE #}
+    {% for entry in craft.entries.section('about').find() %}
+    <title>Raphy Marcy</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="{{ entry.bio | striptags }}">
+    <link rel="canonical" href="{{ siteUrl }}">
+
+    {#Facebook#}
+    <meta property="og:title" content="Raphy Marcy">
+    <meta property="og:description" content="{{ entry.bio }}">
+    <meta property="og:url" content="{{ siteUrl }}">
+
+    <meta property="og:site_name" content="Raphy Marci">
+    {% if craft.request.getRequestUri() == "/" or craft.request.getRequestUri() == "" %}
+        <meta propperty="og:type" content="website">
+    {% else %}
+        <meta propperty="og:type" content="article">
+    {% endif %}
+
+    {#Twitter#}
+    <meta name="twitter:title" content="Raphy Marcy">
+    {% endfor %}
+    {# SEO META TAGS END HERE #}
+
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
