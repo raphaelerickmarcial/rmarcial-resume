@@ -25,7 +25,7 @@ return array(
 	'omitScriptNameInUrls' => 'auto',
 
 	// Control Panel trigger word
-	'cpTrigger' => 'admin',
+	'cpTrigger' => 'rmcms',
 
 	// Dev Mode (see https://craftcms.com/support/dev-mode)
 	'devMode' => true,
